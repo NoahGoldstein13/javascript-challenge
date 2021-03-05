@@ -4,27 +4,27 @@ console.log(tableData)
 
 var body = d3.select("tbody")
 
-// for(var i = 0; i < tableData.length; i++) {
-//     var row = body.append("tr")
-//     row.append('td').text(tableData[i]['datetime'])
+for(var i = 0; i < tableData.length; i++) {
+    var row = body.append("tr")
+    row.append('td').text(tableData[i]['datetime'])
+    row.append('td').text(tableData[i]['city'])
+    row.append('td').text(tableData[i]['state'])
+    row.append('td').text(tableData[i]['country'])
+    row.append('td').text(tableData[i]['shape'])
+    row.append('td').text(tableData[i]['durationMinutes'])
+    row.append('td').text(tableData[i]['comments'])
+}
+
+// tableData.forEach(function(i){
+//     row = body.append('tr')
+//     row.append('td').text(i['datetime'])
 //     row.append('td').text(tableData[i]['city'])
 //     row.append('td').text(tableData[i]['state'])
 //     row.append('td').text(tableData[i]['country'])
 //     row.append('td').text(tableData[i]['shape'])
 //     row.append('td').text(tableData[i]['durationMinutes'])
 //     row.append('td').text(tableData[i]['comments'])
-// }
-
-tableData.forEach(function(i){
-    row = body.append('tr')
-    row.append('td').text(i['datetime'])
-    // row.append('td').text(tableData[i]['city'])
-    // row.append('td').text(tableData[i]['state'])
-    // row.append('td').text(tableData[i]['country'])
-    // row.append('td').text(tableData[i]['shape'])
-    // row.append('td').text(tableData[i]['durationMinutes'])
-    // row.append('td').text(tableData[i]['comments'])
-});
+// });
 
 d3.select("#filter-btn").on("click", filterTable);
 function filterTable(){
